@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Neth</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="icon" href="images\arrow.png" type="image/x-icon">
+</head>
+<body>
+  <div class="container">
+    <h1>nethaji*</h1>
+    <p>Aspiring software engineer based in Chennai,India.</p>
+    <p>Jobless, will code HTML for food.</p>
+    <p class="socials">Feel free to "<span id="get-in-touch" class="underline">get in touch</span>" .</p>
+
+    <div class="socials-container" style="display: none;">
+      <a href="https://github.com/AdonisBuilds189" target="_blank" aria-label="GitHub">
+        <i class="fab fa-github"></i>
+      </a>
+      <a href="https://www.linkedin.com/in/nethaji-k-790707355" target="_blank" aria-label="LinkedIn">
+        <i class="fab fa-linkedin"></i>
+      </a>
+      <a href="https://tinyurl.com/yc8n6cuv" target="_blank" aria-label="Resume">
+        <i class="fas fa-file-pdf"></i>
+      </a>
+    </div>
+  </div>
+    
+  <audio id="hover-sound" src="music\real_1.mp3"></audio>
+
+  <script>
+    document.getElementById("get-in-touch").addEventListener("click", function () {
+      const socialsContainer = document.querySelector(".socials-container");
+      if (socialsContainer.style.display === "none" || socialsContainer.style.display === "") {
+        socialsContainer.style.display = "block";
+        socialsContainer.style.opacity = 0;
+        let opacity = 0;
+        const fadeIn = setInterval(() => {
+          opacity += 0.1;
+          socialsContainer.style.opacity = opacity;
+          if (opacity >= 1) clearInterval(fadeIn);
+        }, 50); // Adjust speed of fade-in
+      } else {
+        let opacity = 1;
+        const fadeOut = setInterval(() => {
+          opacity -= 0.1;
+          socialsContainer.style.opacity = opacity;
+          if (opacity <= 0) {
+            clearInterval(fadeOut);
+            socialsContainer.style.display = "none";
+          }
+        }, 50); // Adjust speed of fade-out
+      }
+    });
+
+    const hoverSound = document.getElementById("hover-sound");
+    const getInTouch = document.getElementById("get-in-touch");
+
+    getInTouch.addEventListener("mouseenter", () => {
+      hoverSound.currentTime = 0; // Reset audio to the beginning
+      hoverSound.play(); // Play the audio
+
+      // Stop the audio after 3 seconds
+      setTimeout(() => {
+        hoverSound.pause();
+        hoverSound.currentTime = 0; // Reset audio to the beginning
+      }, 3900); // 3000 milliseconds = 3 seconds
+    });
+
+    getInTouch.addEventListener("mouseleave", () => {
+      hoverSound.pause(); // Pause the audio
+      hoverSound.currentTime = 0; // Reset audio to the beginning
+    });
+  </script>
+</body>
+</html>

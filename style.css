@@ -1,0 +1,93 @@
+*{
+  margin:0px;
+  padding:0px;
+  box-sizing:border-box;
+}
+body{
+  background-color: rgb(255, 255, 255);
+  height:100vh;
+  font-family: monospace;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px; /* Add padding for smaller screens */
+}
+
+.container h1{
+  font-weight: 600;
+  line-height: 24px;
+  color:rgb(24,24,24);
+  margin-bottom: 25px;
+  text-align: left; /* Ensure the heading is also left-aligned */
+}
+
+.container p{
+  font-weight: 380;
+  color:rgb(115,115,115);
+  margin-bottom:10px;
+  font-size: 16px;
+  text-align: left; /* Ensure paragraphs are left-aligned */
+}
+
+.container {
+  max-width: 600px; /* Limit the width of the container */
+  text-align: left; /* Align text to the left */
+  margin: 0 auto; /* Center the container horizontally */
+}
+
+.socials .underline:hover {
+  text-decoration: underline;
+  cursor:pointer;
+}
+
+.socials-container {
+  margin-top: 25px; /* Add consistent spacing above the socials container */
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap; /* Allow icons to wrap on smaller screens */
+}
+
+.socials-container a {
+  margin: 10px; /* Add spacing between icons */
+  color: #000; /* Change to your preferred color */
+  font-size: 24px; /* Adjust icon size */
+  text-decoration: none;
+}
+
+.socials-container a:hover {
+  color: #0077b5; /* Change hover color (e.g., LinkedIn blue) */
+}
+
+/* Responsive styles for smaller screens */
+@media (max-width: 768px) {
+  body {
+    flex-direction: column; /* Stack content vertically */
+    padding: 10px;
+  }
+
+  .container h1 {
+    font-size: 24px; /* Adjust heading size */
+  }
+
+  .container p {
+    font-size: 14px; /* Adjust paragraph size */
+  }
+
+  .socials-container a {
+    font-size: 20px; /* Reduce icon size */
+  }
+}
+
+@media (max-width: 480px) {
+  .container h1 {
+    font-size: 20px; /* Further reduce heading size */
+  }
+
+  .container p {
+    font-size: 12px; /* Further reduce paragraph size */
+  }
+
+  .socials-container a {
+    font-size: 18px; /* Further reduce icon size */
+  }
+}
